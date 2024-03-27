@@ -1,12 +1,17 @@
 # DinosaurDepthMapClipping aka Using Monocular Depth Estimation to Mask an Image  
 Clipping an image to keep the nearest elements to the camera of an image 
 
+From this image:
+
+[Dinosaur in Museem with mural background](image/
+
 # Background
 In this article I will guide you through the steps I took to create a clipped image with background clutter removed from the image. I will accomplish this using Monocular Depth Estimation. This could potentially be used to automate structure from motion and other image related tasks where you want to highlight or focus on a single portion of an image, particularly for identifying parts of the image that were closest to the camera when taken. 
 Monocular Depth Estimation (DPT)
 Monocular depth estimation, aiming to infer detailed depth from a single image or camera view, finds applications in fields like generative AI, 3D reconstruction, and autonomous driving. However, deriving depth from individual pixels in a single image is challenging due to the underconstrained nature of the problem. Recent advancements attribute progress to learning-based methods, particularly with MiDaS, leveraging dataset mixing and scale-and-shift-invariant loss. MiDaS has evolved with releases featuring more powerful backbones and lightweight variants for mobile use. With the rise of transformer architectures in computer vision, including those pioneered by models like ViT, there's been a shift towards using them for depth estimation. Inspired by this, MiDaS v3.1 incorporates promising transformer-based encoders alongside traditional convolutional ones, aiming for a comprehensive investigation of depth estimation techniques. The paper focuses on describing the integration of these backbones into MiDaS, providing a thorough comparison of different v3.1 models, and offering guidance on utilizing future backbones with MiDaS.
 This DPT model uses the Hugging Face BEiT model as backbone and adds a neck + head on top for monocular depth estimation and was created by Intel. It is called dpt-beit-large-512 (but we have more compact resolutions as well). This model is based on a resolution of 512x512 internally, but images of any size can be inferred against this model.
 For more information about this model – see a condensed explanation on Hugging Face Model Card, dpt-beit-large-512 or a deeper dive explanation in this paper “MiDaS v3.1 – A Model Zoo for Robust Monocular Relative Depth Estimation” by Reiner Birkl, Diana Wofk, Matthias Muller.
+
 # Steps:
 1)	Insall the requisite libraries:
 ```bash
@@ -106,6 +111,7 @@ out.convert('RGB').show()
 
 
 # Summary
+
 I demonstrated that how to use Depth Estimation to create an easy masking technique to hide visual clutter from a background image. In one example, I demonstrated a picture from a museum with a background mural and a 3D dinosaur cast in front of the mural. The Intel/dpt-beit-large-512 DPT model as able to pull the dinosaur out of the noisy background.
 
 # Play with these concepts on the Intel Developer Cloud:
@@ -118,20 +124,21 @@ Then Launch JupyterLab on the shared access node in the icon on the right
 # Code
 The code for this article and the rest of the series is located on github. For this article experiment with the file: **dpt_dino.ipynb**
 Intel Developer Cloud System Configuration as tested:
-x86_64
-CPU op-mode(s): 32-bit, 64-bit
-Address sizes: 52 bits physical, 57 bits virtual
-Byte Order: Little Endian
-CPU(s): 224
-On-line CPU(s) list: 0–223
-Vendor ID: GenuineIntel
-Model name: Intel(R) Xeon(R) Platinum 8480+
-CPU family: 6
-Model: 143
-Thread(s) per core: 2
-Core(s) per socket: 56
-Socket(s): 2
-Stepping: 8
-CPU max MHz: 3800.0000
-CPU min MHz: 800.0000
+
+- x86_64
+- CPU op-mode(s): 32-bit, 64-bit
+- Address sizes: 52 bits physical, 57 bits virtual
+- Byte Order: Little Endian
+- CPU(s): 224
+- On-line CPU(s) list: 0–223
+- Vendor ID: GenuineIntel
+- Model name: Intel(R) Xeon(R) Platinum 8480+
+- CPU family: 6
+- Model: 143
+- Thread(s) per core: 2
+- Core(s) per socket: 56
+- Socket(s): 2
+- Stepping: 8
+- CPU max MHz: 3800.0000
+- CPU min MHz: 800.0000
 
