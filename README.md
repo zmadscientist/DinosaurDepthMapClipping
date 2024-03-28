@@ -1,9 +1,17 @@
 # DinosaurDepthMapClipping aka Using Monocular Depth Estimation to Mask an Image  
 Clipping an image to keep the nearest elements to the camera of an image 
 
-From this image:
+### What the code does - in pictures!
 
 ![Dinosaur in museum with mural background](image/MonocularDepthEstimation.png)
+
+### From this image:
+
+![Dinosaur in museum with mural background](image/DinoWithMuralBackgroundOrig.png)
+
+### to this image:
+
+![Dinosaur in museum with mural background](image/DinoWithMuralBackgroundClipped.png)
 
 # Background
 In this article I will guide you through the steps I took to create a clipped image with background clutter removed from the image. I will accomplish this using Monocular Depth Estimation. This could potentially be used to automate structure from motion and other image related tasks where you want to highlight or focus on a single portion of an image, particularly for identifying parts of the image that were closest to the camera when taken. 
