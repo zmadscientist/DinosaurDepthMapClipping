@@ -3,13 +3,13 @@ Clipping an image to keep the nearest elements to the camera of an image
 
 ### What the code does - in pictures!
 
-![Dinosaur in museum with mural background](image/MonocularDepthEstimation.png)
+![Dinosaur in museum with mural background](image/MonocularDepthEstimation3examples.png)
 
-### From this image:
+### From this image - 3D dinosaur with painted mural wall in background:
 
 ![Dinosaur in museum with mural background](image/DinoWithMuralBackgroundOrig.png)
 
-### to this image:
+### to this image - 3D dinosaur with mural removed:
 
 ![Dinosaur in museum with mural background](image/DinoWithMuralBackgroundClipped.png)
 
@@ -48,7 +48,7 @@ import requests
 3)	Load image in PIL. Notice that the dinosaur, Stegosaurus, is placed in front of a painted mural – making separation a more manual task with many common methods.
 
 ```python
-path = "image/DSC_0566.png"
+path = "image/DSC_0566.png"  # use Pottery_20231001_135018.jpg to see pottery example
 image = Image.open(path)
 MAX_SIZE = (600, 400) 
 image.thumbnail(MAX_SIZE) 
@@ -97,7 +97,7 @@ depth
  
 6)	Create BW mask from the depth estimate:
 ```python
-Threshold = 45
+Threshold = 45  # use 155 for Threshold for Pottery example
 a = np.array(depth)
 b = np.where(a>Threshold,a,0)
 b[b>Threshold] = 255
