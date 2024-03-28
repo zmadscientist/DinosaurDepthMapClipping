@@ -1,4 +1,4 @@
-# DinosaurDepthMapClipping aka Using Monocular Depth Estimation to Mask an Image  
+# Using Monocular Depth Estimation to Mask an Image aka DinosaurDepthMapClipping   
 Clipping an image to keep the nearest elements to the camera of an image 
 
 ### What the code does - in pictures!
