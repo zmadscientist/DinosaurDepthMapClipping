@@ -138,11 +138,6 @@ out = Image.composite(image, black, mask)
 out.convert('RGB').show()
 ```
 
- 
-
-
-
-
 # Summary
 
 I demonstrated that how to use Depth Estimation to create an easy masking technique to hide visual clutter from a background image. In one example, I demonstrated a picture from a museum with a background mural and a 3D dinosaur cast in front of the mural. The Intel/dpt-beit-large-512 DPT model as able to pull the dinosaur out of the noisy background.
@@ -155,7 +150,10 @@ Then Launch JupyterLab on the shared access node in the icon on the right
 
 # Code
 The code for this article and the rest of the series is located on github. For this article experiment with the file: **dpt_dino.ipynb**
-Intel Developer Cloud System Configuration as tested:
+- https://github.com/zmadscientist/DinosaurDepthMapClipping
+
+
+Intel Tiber Developer Cloud System Configuration as tested:
 
 - x86_64
 - CPU op-mode(s): 32-bit, 64-bit
