@@ -38,7 +38,7 @@ It is called dpt-beit-large-512 (but we have more compact resolutions as well). 
 
 ## Huggingface model card:
 
-the Huggingface **[model card](https://huggingface.co/Intel/dpt-beit-large-512)** will detail more information and different examples for you to try and realted more compact models such as **[dpt-beit-large-384](https://huggingface.co/Intel/dpt-beit-large-384)** are also available.
+The Huggingface model card will detail more information and different examples for you to try and related more compact models such as dpt-beit-large-384 and dpt-swinv2-tiny-256 are also available.
 
 # Youtube Videos:
 - [MiDaS Depth Estimation | Intel Technology](https://www.youtube.com/watch?v=UjaeNNFf9sE)
